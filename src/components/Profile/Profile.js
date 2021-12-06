@@ -7,33 +7,6 @@
 // stats — объект с информацией об активности
 // Компонент должен создавать DOM элемент следующей структуры.
 
-// <div class="profile">
-//   <div class="description">
-//     <img
-//       src="https://cdn-icons-png.flaticon.com/512/1077/1077012.png"
-//       alt="User avatar"
-//       class="avatar"
-//     />
-//     <p class="name">Petra Marica</p>
-//     <p class="tag">@pmarica</p>
-//     <p class="location">Salvador, Brasil</p>
-//   </div>
-
-//   <ul class="stats">
-//     <li>
-//       <span class="label">Followers</span>
-//       <span class="quantity">1000</span>
-//     </li>
-//     <li>
-//       <span class="label">Views</span>
-//       <span class="quantity">2000</span>
-//     </li>
-//     <li>
-//       <span class="label">Likes</span>
-//       <span class="quantity">3000</span>
-//     </li>
-//   </ul>
-// </div>
 
 
 // Пример использования
@@ -46,3 +19,82 @@
 //   avatar={user.avatar}
 //   stats={user.stats}
 // />
+
+import PropTypes from 'prop-types';
+import s from './Profile.module.scss'
+
+console.log(PropTypes);
+
+
+const Profile = ({
+    username,
+    tag,
+    location,
+    avatar,
+    stats,
+})=>{
+    return ( 
+<div className={s.profile}>
+<div className="description">
+   <img
+      src={avatar}
+      alt="User avatar"      
+      className="avatar"
+     />    
+      <p className="name">{username}</p>
+     <p className="tag">@{tag}</p>
+     <p className="location">{location}</p>
+   </div>
+
+   <ul className="stats">
+    <li>
+       <span className="label">Followers</span>
+       <span className="quantity">{stats.followers}</span>
+     </li>
+     <li>
+      <span className="label">Views</span>
+      <span className="quantity">{stats.views}</span>     
+      </li>
+    <li>
+      <span className="label">Likes</span>
+      <span className="quantity">{stats.likes}</span>
+     </li>
+  </ul> 
+  </div>) };
+
+
+export default Profile;
+
+
+// const Painting = ({
+//     imageUrl = defaultImage,
+//     title,
+//     profileUrl,
+//     author = 'не известно',
+//     price,
+//     quantity,
+//   }) => {
+//     return (
+//       <div>
+//         <img src={imageUrl} alt={title} width="480" />
+//         <h2>{title}</h2>
+//         <p>
+//           Автор: <a href={profileUrl}>{author}</a>
+//         </p>
+//         <p>Цена: {price} кредитов</p>
+//         <p>Доступность: {quantity < 10 ? 'заканчивается' : 'есть в наличии'}</p>
+//         <button type="button">Добавить в корзину</button>
+//       </div>
+//     );
+//   };
+  
+//   Painting.propTypes = {
+//     imageUrl: PropTypes.string.isRequired,
+//     title: PropTypes.string.isRequired,
+//     profileUrl: PropTypes.string.isRequired,
+//     author: PropTypes.string.isRequired,
+//     price: PropTypes.number.isRequired,
+//     quantity: PropTypes.number.isRequired,
+//   };
+  
+//   export default Painting;

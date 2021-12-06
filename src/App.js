@@ -1,11 +1,23 @@
-import logo from './logo.svg';
 import './App.css';
+import Profile from './components/Profile/Profile';
+import user from './data/user.json'
+
+
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+
+       <Profile
+       username={user.username}
+       tag={user.tag}
+       location={user.location}
+       avatar={user.avatar}
+       stats={user.stats}
+ />
+
+        {/* <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
@@ -16,7 +28,7 @@ function App() {
           rel="noopener noreferrer"
         >
           Learn React
-        </a>
+        </a> */}
       </header>
     </div>
   );
