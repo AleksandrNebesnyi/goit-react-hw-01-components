@@ -20,7 +20,29 @@
 //   <img class="avatar" src="" alt="User avatar" width="48" />
 //   <p class="name"></p>
 // </li>
-// Пример использования
-// import friends from 'путь/к/friends.json';
 
-// <FriendList friends={friends} />,
+import PropTypes from "prop-types";
+import FriendListItem from "./FriendListItem";
+
+const FriendList = ({ friends }) => {
+  return (
+    <ul className="friend-list">
+      {friends.map((friend) => (
+        <li key={friend.id} className="item">
+          <FriendListItem
+            avatar={friend.avatar}
+            name={friend.name}
+            isOnline={friend.isOnline}
+          />
+        </li>
+      ))}
+    </ul>
+  );
+};
+FriendList.prototype = {
+  friends: PropTypes.arrayOf(
+    PropTypes.shape({ id: PropTypes.string.isRequired })
+  ),
+};
+
+export default FriendList;
