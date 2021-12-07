@@ -1,8 +1,17 @@
 import "./App.css";
-import Profile from "./components/Profile/Profile";
+
 import user from "./data/user.json";
+import Profile from "./components/Profile/Profile";
+
 import friends from "./data/friends.json";
 import FriendList from "./components/FriendList/FriendList";
+
+import data from './data/data.json'
+import Statistics from './components/Statistics/Statistics'
+
+import transactions from './data/transactions.json'
+import TransactionHistory from './components/TransactionHistory/TransactionHistory'
+
 
 function App() {
   return (
@@ -16,18 +25,13 @@ function App() {
           stats={user.stats}
         />
         <FriendList friends={friends} />
-        {/* <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a> */}
+
+         <Statistics title="Upload stats" stats={data} />
+         <Statistics stats={data} />
+
+         <TransactionHistory items={transactions} />
+
+      
       </header>
     </div>
   );

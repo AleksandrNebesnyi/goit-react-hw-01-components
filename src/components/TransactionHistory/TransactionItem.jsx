@@ -9,29 +9,32 @@
 
 // Необходимо создать компонент <TransactionHistory> принимающий один проп items - массив объектов транзакций из transactions.json. Компонент создает разметку таблицы. Каждая транзакция это строка таблицы. В примере приведена разметка двух транзакций.
 
-// <table class="transaction-history">
-//   <thead>
-//     <tr>
-//       <th>Type</th>
-//       <th>Amount</th>
-//       <th>Currency</th>
-//     </tr>
-//   </thead>
 
-//   <tbody>
-//     <tr>
-//       <td>Invoice</td>
-//       <td>125</td>
-//       <td>USD</td>
-//     </tr>
-//     <tr>
-//       <td>Withdrawal</td>
-//       <td>85</td>
-//       <td>USD</td>
-//     </tr>
-//   </tbody>
-// </table>
 // Пример использования
 // import transactions from 'путь/к/transactions.json';
 
 // <TransactionHistory items={transactions} />;
+import PropTypes from "prop-types";
+
+const TransactionItem =({id, type, amount, currency}) => {
+    return (
+        
+        <tr className="trRow" id={id}>
+          <td className="trItem">{type}</td>
+          <td className="trItem">{amount}</td>
+          <td className="trItem">{currency}</td>
+        </tr>
+      
+
+);} 
+
+TransactionItem.prototype ={
+    id: PropTypes.string,
+    type: PropTypes.string,
+    amount :PropTypes.string,
+    currency:PropTypes.string,
+};
+
+
+
+export default TransactionItem;

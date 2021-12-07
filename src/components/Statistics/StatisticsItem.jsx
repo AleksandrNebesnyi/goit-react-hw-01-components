@@ -32,3 +32,23 @@
 
 // <Statistics title="Upload stats" stats={data} />;
 // <Statistics stats={data} />;
+import PropTypes from "prop-types";
+const StatisticsItem = ({label ,percentage, id}) =>{
+    return (
+        
+        <li key = {id} className="item">
+       <span className="label">{label}</span>
+      <span className="percentage">{percentage}%</span>
+     </li>
+     
+    );
+};
+
+
+StatisticsItem.prototype = {
+    id : PropTypes.string,
+    label: PropTypes.string,
+    percentage : PropTypes.number,
+};
+
+export default StatisticsItem;
