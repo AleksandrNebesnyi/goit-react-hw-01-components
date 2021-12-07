@@ -1,13 +1,14 @@
 import PropTypes from "prop-types"
 import StatisticsItem from "./StatisticsItem"
+import s from './Statistics.module.css'
 
 
 const Statistics = ({stats, title})=>{
     if (stats.length === 0) return null;
     return(
-        <section className="statistics">
-            <h2 className="title">{title ? title.toUpperCase() : title}</h2>
-            <ul className="friend-list">
+        <section className={s.statistics}>
+            <h2 className={s.title}>{title ? title.toUpperCase() : title}</h2>
+            <ul className={s['stat-list']}>
         {stats.map((stat)=>(<StatisticsItem
         id={stat.id}
         label={stat.label}
