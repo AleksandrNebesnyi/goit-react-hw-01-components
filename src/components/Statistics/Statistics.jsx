@@ -9,11 +9,15 @@ const Statistics = ({stats, title})=>{
         <section className={s.statistics}>
             <h2 className={s.title}>{title ? title.toUpperCase() : title}</h2>
             <ul className={s['stat-list']}>
-        {stats.map((stat)=>(<StatisticsItem
+                
+        {stats.map((stat)=>(
+             <li key = {stat.id} className={s.item}>
+        <StatisticsItem
         id={stat.id}
         label={stat.label}
         percentage={stat.percentage}
         /> 
+        </li>
         ))}
 
 

@@ -9,9 +9,6 @@
 
 import PropTypes from "prop-types";
 import s from './Profile.module.css'
-console.log(s);
-
-console.log(PropTypes);
 
 const Profile = ({ username, tag, location, avatar, stats }) => {
   return (

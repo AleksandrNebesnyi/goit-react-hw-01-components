@@ -33,7 +33,7 @@ const FriendList = ({ friends }) => {
           <FriendListItem
             avatar={friend.avatar}
             name={friend.name}
-            isOnline={friends.isOnline}
+            isOnline={friend.isOnline}
           />
         </li>
         
@@ -41,7 +41,7 @@ const FriendList = ({ friends }) => {
     </ul>
   );
 };
-console.log(FriendList);
+
 FriendList.prototype = {
   friends: PropTypes.arrayOf(
     PropTypes.shape({ id: PropTypes.string.isRequired })

@@ -10,15 +10,12 @@ import PropTypes from "prop-types";
 import s from './StatisticItem.module.css'
 const StatisticsItem = ({label ,percentage, id}) =>{
     return (
-        
-        <li key = {id} className={s.item}>
-       <span className={s.label}>{label}</span>
-      <span className={s.percentage}>{percentage}%</span>
-     </li>
-     
+        <>
+        <span className={s.label}>{label}</span>
+       <span className={s.percentage}>{percentage}%</span>
+        </>
     );
 };
-
 
 StatisticsItem.prototype = {
     id : PropTypes.string,

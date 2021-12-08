@@ -15,15 +15,17 @@
 
 // <TransactionHistory items={transactions} />;
 import PropTypes from "prop-types";
+import s from './TransactionItem.module.css'
+
 
 const TransactionItem =({id, type, amount, currency}) => {
     return (
         
-        <tr className="trRow" id={id}>
-          <td className="trItem">{type}</td>
-          <td className="trItem">{amount}</td>
-          <td className="trItem">{currency}</td>
-        </tr>
+        < >
+          <td className={s.cell}>{type}</td>
+          <td className={s.cell}>{amount}</td>
+          <td className={s.cell}>{currency}</td>
+        </>
       
 
 );} 

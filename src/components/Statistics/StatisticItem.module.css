@@ -1,15 +1,4 @@
-.item {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
 
-  width: 60px;
-  height: 60px;
-  padding: 5px;
-
-  text-align: center;
-  color: black;
-}
 
 .label {
   margin-bottom: 5px;
