@@ -9,18 +9,3 @@
 
   /* background-color: #ffffff; */
 }
-
-.item {
-  display: flex;
-  align-items: center;
-  padding: 5px 0;
-
-  background-color: #ffffff;
-
-  cursor: pointer;
-  color: black;
-}
-
-.item:not(:last-child) {
-  margin-bottom: 25px;
-}
